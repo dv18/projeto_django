@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-me</title>
+</head>
+<body>
+    <form action="{% url 'listagem_usuarios' %}" method="post"> <!--metodo "post" envia informações para o banco de dados-->
+        {% csrf_token %}
+        <div class="container">
+            <h1>Tela de cadastro</h1>
+            Nome<input name="nome" type="text"> <!--para poder identificar os nomes na aplicação django, é necessário especificar com a função name=""-->
+            Idade <input name="idade" type="text">
+            <button>Enviar</button>
+        </div>
+    </form>
+</body>
+</html>
